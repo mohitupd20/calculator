@@ -1,0 +1,156 @@
+/* styles.css */
+body {
+    background-image: url(light_2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-69%, -50%);
+}
+
+.calculator {
+    background-color: #dadada;
+    border-radius: 15px;
+    padding: 20px;
+    height: calc(100% + 20%);
+    width: calc(100% + 10%);
+
+}
+
+.result {
+    width: calc(100% - 40px);
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 20px;
+    text-align: right;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background-color: #d0d0d0;
+    box-shadow: inset 5px 5px 10px #ababab,
+        inset -5px -5px 10px #ffffff;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.clear {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 0.5rem;
+}
+
+
+button {
+    padding: 10px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #dadada;
+    box-shadow: 5px 5px 10px #ababab,
+        -5px -5px 10px #ffffff;
+}
+
+.btn-clear {
+    width: 4.7rem;
+}
+
+button:active {
+    transform: translateY(2px);
+}
+
+.toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: #2196F3;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+
+
+@media screen and (max-width: 480px) {
+    .calculator {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .result {
+        font-size: 16px;
+    }
+
+    .buttons {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+    }
+
+    button {
+        font-size: 16px;
+    }
+}
